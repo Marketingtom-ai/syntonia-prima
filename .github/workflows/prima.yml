@@ -1,19 +1,22 @@
 name: PRIMA
 
 # Instagram non si puo' programmare: Meta non lo permette. Quindi qui c'e' un
-# orologio che pubblica al momento. Facebook invece si programma nativamente,
-# e questo stesso lavoro tiene piena la coda dei 29 giorni consentiti.
+# orologio che pubblica al momento. Facebook si programma nativamente, e questo
+# stesso lavoro tiene piena la coda dei 29 giorni consentiti.
 #
-# Gli orari sono UTC. Ogni appuntamento ha due partenze, perche' l'ora legale
-# italiana sposta tutto di un'ora: quella sbagliata non trova niente e si ferma.
+# Orari UTC. Si parte ogni giorno alle due fasce buone piu' due riserve ciascuna,
+# perche' l'ora legale sposta tutto di un'ora e perche' un giro puo' andare male.
+# Si pubblica solo cio' che e' gia' dovuto: i giri di troppo non trovano niente.
 
 on:
   schedule:
-    - cron: '30 17 * * 2'
-    - cron: '30 18 * * 2'
-    - cron: '0 9 * * 6'
-    - cron: '0 10 * * 6'
     - cron: '20 6 * * *'
+    - cron: '0 9 * * *'
+    - cron: '0 10 * * *'
+    - cron: '0 11 * * *'
+    - cron: '30 17 * * *'
+    - cron: '30 18 * * *'
+    - cron: '30 19 * * *'
   workflow_dispatch:
 
 permissions:
