@@ -1,23 +1,10 @@
 {
- "run": "2026-09-03T10:40:43Z",
+ "run": "2026-09-03T11:37:25Z",
+ "ora italiana": "2026-09-03 13:37",
  "righe": [
   "IG  niente da pubblicare",
-  "FB  programmato n.2 S09-SAB-MARE per 2026-09-03T17:30:00Z",
-  "FB  programmato n.3 S02-MAR-UNPRODOTTO per 2026-09-04T17:30:00Z",
-  "FB  programmato n.4 VOCE-01-MANIFESTO per 2026-09-05T09:00:00Z",
-  "FB  programmato n.5 S11-GIO-DOPOCENA per 2026-09-06T09:00:00Z",
-  "FB  programmato n.6 S01-SAB-NOVANTUNO per 2026-09-07T17:30:00Z",
-  "FB  programmato n.7 S04-MAR-UNPRODOTTO per 2026-09-08T17:30:00Z",
-  "FB  programmato n.8 VE-CHIOSTRO per 2026-09-09T17:30:00Z",
-  "FB  programmato n.9 S07-GIO-ATAVOLA per 2026-09-10T17:30:00Z",
-  "FB  programmato n.10 S10-SAB-MARE per 2026-09-11T17:30:00Z",
-  "FB  programmato n.11 S06-MAR-UNPRODOTTO per 2026-09-12T09:00:00Z",
-  "FB  programmato n.12 S02-SAB-NOVANTUNO per 2026-09-15T17:30:00Z",
-  "FB  programmato n.13 S12-GIO-LATAVOLA per 2026-09-19T09:00:00Z",
-  "FB  programmato n.14 VE-CORTILE per 2026-09-22T17:30:00Z",
-  "FB  programmato n.15 VOCE-02-MANIFESTO per 2026-09-26T09:00:00Z",
-  "FB  programmato n.16 S07-SAB-DIMORA per 2026-09-29T17:30:00Z",
-  "FB  coda: 0 gia' presenti, 15 aggiunti",
+  "ST  nessun materiale: cartelle carte/ e storie/ vuote o assenti",
+  "FB  coda: 15 gia' presenti, 0 aggiunti",
   "Token: accesso ai dati fra 87 giorni"
  ]
 }
