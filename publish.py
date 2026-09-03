@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# PRIMA - pubblicazione automatica del feed Syntonia.
+# PRIMA - pubblicazione automatica del feed e delle storie Syntonia.
 # Gira su GitHub Actions. Solo libreria standard, nessuna dipendenza.
 # Instagram: pubblica al momento (Meta non permette di programmare).
 # Facebook:  ricarica la coda nativa entro i 29 giorni consentiti.
@@ -12,6 +12,10 @@ RAW = "https://raw.githubusercontent.com/Marketingtom-ai/syntonia-prima/main/"
 ROOT = pathlib.Path(__file__).parent
 STATO = ROOT / "_state"
 LOG = []
+
+# le storie: due momenti al giorno, ora italiana
+MATTINA, SERA = (9, 30), (21, 0)
+GIORNO_ZERO = datetime.date(2026, 9, 4)
 
 def log(m):
     print(m, flush=True); LOG.append(m)
@@ -28,9 +32,28 @@ def api(path, params=None, post=False, method=None):
     except urllib.error.HTTPError as e:
         raise RuntimeError("%s %s -> %s" % (method or ("POST" if post else "GET"), path, e.read().decode()[:300]))
 
-def now():  return datetime.datetime.now(datetime.timezone.utc)
+def now():   return datetime.datetime.now(datetime.timezone.utc)
 def when(p): return datetime.datetime.strptime(p["when"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
 def capo(p): return p["caption"].split("\n")[0].strip()
+
+def _ultima_domenica(anno, mese):
+    d = datetime.date(anno, mese, 31)
+    while d.weekday() != 6: d -= datetime.timedelta(days=1)
+    return d
+
+def ora_italiana():
+    """L'ora legale la calcola, non la indovina: ultima domenica di marzo e di ottobre."""
+    n = now(); a = n.year
+    est = _ultima_domenica(a, 3) <= n.date() < _ultima_domenica(a, 10)
+    return n + datetime.timedelta(hours=2 if est else 1)
+
+def leggi(f, vuoto):
+    try: return json.loads((STATO / f).read_text(encoding="utf-8"))
+    except Exception: return vuoto
+
+def scrivi(f, dati):
+    STATO.mkdir(exist_ok=True)
+    (STATO / f).write_text(json.dumps(dati, ensure_ascii=False, indent=1), encoding="utf-8")
 
 def files_of(p):
     if p.get("tipo") == "reel":     return [p["file"]]
@@ -64,6 +87,51 @@ def ig_pubblica(p):
     link = api(mid, {"fields": "permalink"}).get("permalink", "")
     log("IG  pubblicato n.%s %s  %s" % (p["n"], p["id"], link))
 
+def ig_storia(rel):
+    cid = api(IG + "/media", {"media_type": "STORIES", "image_url": RAW + rel}, post=True)["id"]
+    ig_attendi(cid, 4)
+    api(IG + "/media_publish", {"creation_id": cid}, post=True)
+
+# ── le storie ────────────────────────────────────────────────────────────────
+def elenco(cartella):
+    d = ROOT / cartella
+    return sorted(x.name for x in d.glob("*.jpg")) if d.is_dir() else []
+
+def storie():
+    carte, foto = elenco("carte"), elenco("storie")
+    if not carte and not foto:
+        log("ST  nessun materiale: cartelle carte/ e storie/ vuote o assenti"); return
+    loc = ora_italiana()
+    minuti = loc.hour * 60 + loc.minute
+    d = (loc.date() - GIORNO_ZERO).days
+    if d < 0: return
+    blocchi = []
+    if minuti >= MATTINA[0] * 60 + MATTINA[1]:
+        b = []
+        if carte: b.append("carte/" + carte[d % len(carte)])
+        if foto:  b.append("storie/" + foto[(2 * d) % len(foto)])
+        blocchi.append(("mattina", b))
+    if minuti >= SERA[0] * 60 + SERA[1] and foto:
+        blocchi.append(("sera", ["storie/" + foto[(2 * d + 1) % len(foto)]]))
+    fatti = leggi("storie.json", {})
+    nuove = 0
+    for nome, files in blocchi:
+        chiave = "%s-%s" % (loc.date().isoformat(), nome)
+        if chiave in fatti: continue
+        usciti = []
+        for rel in files:
+            try:
+                ig_storia(rel); usciti.append(rel); nuove += 1
+            except Exception as e:
+                log("ST  FALLITA %s: %s" % (rel, e))
+        if usciti:
+            fatti[chiave] = usciti
+            log("ST  %s: %s" % (nome, ", ".join(usciti)))
+    limite = (loc.date() - datetime.timedelta(days=40)).isoformat()
+    fatti = {k: v for k, v in fatti.items() if k[:10] >= limite}
+    scrivi("storie.json", fatti)
+    if not nuove: log("ST  niente da pubblicare")
+
 # ── Facebook ─────────────────────────────────────────────────────────────────
 def fb_programma(p, ep):
     fs = files_of(p)
@@ -81,7 +149,6 @@ def fb_programma(p, ep):
                              "attached_media": json.dumps([{"media_fbid": i} for i in ids]),
                              "published": "false", "scheduled_publish_time": ep}, post=True)
     except Exception:
-        # una foto non pubblicata vale per un solo post: si buttano e si riprova pulito
         for i in ids:
             try: api(i, method="DELETE")
             except Exception: pass
@@ -106,19 +173,15 @@ def fb_ricarica(posts):
     log("FB  coda: %d gia' presenti, %d aggiunti" % (len(coda) - fatti, fatti))
 
 # ── principale ───────────────────────────────────────────────────────────────
-def main():
-    posts = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))["posts"]
-    STATO.mkdir(exist_ok=True)
-    f_usciti = STATO / "usciti.json"
-    usciti_n = set(json.loads(f_usciti.read_text())) if f_usciti.exists() else set()
+def feed(posts):
+    usciti_n = set(leggi("usciti.json", []))
     recenti = {(m.get("caption") or "").split("\n")[0].strip()
                for m in api(IG + "/media", {"fields": "caption", "limit": "40"}).get("data", [])}
-    soglia = now() + datetime.timedelta(minutes=10)
+    soglia  = now() + datetime.timedelta(minutes=10)
     vecchio = now() - datetime.timedelta(days=21)
     dovuti = [p for p in posts if when(p) <= soglia and when(p) >= vecchio
               and p["n"] not in usciti_n and capo(p) not in recenti]
-    if not dovuti:
-        log("IG  niente da pubblicare")
+    if not dovuti: log("IG  niente da pubblicare")
     for p in dovuti[:1]:
         try:
             ig_pubblica(p); usciti_n.add(p["n"])
@@ -128,10 +191,15 @@ def main():
         log("IG  ATTENZIONE: restano %d post arretrati" % (len(dovuti) - 1))
     for p in posts:
         if when(p) < vecchio and p["n"] not in usciti_n and capo(p) not in recenti:
-            usciti_n.add(p["n"])   # troppo vecchio: si considera chiuso, non si ripubblica
-    f_usciti.write_text(json.dumps(sorted(usciti_n)), encoding="utf-8")
-    try: fb_ricarica(posts)
-    except Exception as e: log("FB  ricarica fallita: %s" % e)
+            usciti_n.add(p["n"])
+    scrivi("usciti.json", sorted(usciti_n))
+
+def main():
+    posts = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))["posts"]
+    STATO.mkdir(exist_ok=True)
+    for nome, f in (("feed", lambda: feed(posts)), ("storie", storie), ("facebook", lambda: fb_ricarica(posts))):
+        try: f()
+        except Exception as e: log("%s: fallito -> %s" % (nome, e))
     try:
         d = api("debug_token", {"input_token": TOKEN})["data"]
         g = (datetime.datetime.fromtimestamp(d["data_access_expires_at"], datetime.timezone.utc) - now()).days
@@ -139,8 +207,8 @@ def main():
         if g < 30: log("!!! TOKEN IN SCADENZA: va rinnovato o la macchina si ferma")
     except Exception as e:
         log("debug_token: %s" % e)
-    (STATO / "log.json").write_text(json.dumps(
-        {"run": now().strftime("%Y-%m-%dT%H:%M:%SZ"), "righe": LOG}, ensure_ascii=False, indent=1), encoding="utf-8")
+    scrivi("log.json", {"run": now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                        "ora italiana": ora_italiana().strftime("%Y-%m-%d %H:%M"), "righe": LOG})
 
 if __name__ == "__main__":
     main()
