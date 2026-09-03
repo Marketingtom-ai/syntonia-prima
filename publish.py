@@ -15,7 +15,7 @@ LOG = []
 
 # le storie: due momenti al giorno, ora italiana
 MATTINA, SERA = (9, 30), (21, 0)
-GIORNO_ZERO = datetime.date(2026, 9, 4)
+GIORNO_ZERO = datetime.date(2026, 9, 3)
 
 def log(m):
     print(m, flush=True); LOG.append(m)
