@@ -119,13 +119,13 @@ def main():
               and p["n"] not in usciti_n and capo(p) not in recenti]
     if not dovuti:
         log("IG  niente da pubblicare")
-    for p in dovuti[:2]:
+    for p in dovuti[:1]:
         try:
             ig_pubblica(p); usciti_n.add(p["n"])
         except Exception as e:
             log("IG  FALLITO n.%s %s: %s" % (p["n"], p["id"], e)); break
-    if len(dovuti) > 2:
-        log("IG  ATTENZIONE: restano %d post arretrati" % (len(dovuti) - 2))
+    if len(dovuti) > 1:
+        log("IG  ATTENZIONE: restano %d post arretrati" % (len(dovuti) - 1))
     for p in posts:
         if when(p) < vecchio and p["n"] not in usciti_n and capo(p) not in recenti:
             usciti_n.add(p["n"])   # troppo vecchio: si considera chiuso, non si ripubblica
