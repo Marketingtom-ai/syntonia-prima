@@ -1,10 +1,11 @@
 {
- "run": "2026-09-10T23:02:07Z",
- "ora italiana": "2026-09-11 01:02",
+ "run": "2026-09-11T11:32:09Z",
+ "ora italiana": "2026-09-11 13:32",
  "righe": [
   "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
-  "FB  coda: 9 gia' presenti, 0 aggiunti",
-  "Token: accesso ai dati fra 80 giorni"
+  "ST  mattina: carte/VOCE-09-MESTIERE.jpg, storie/G005_1.jpg",
+  "FB  programmato n.19 RISERVA-ILPIATTO-D03 per 2026-10-10T09:00:00Z",
+  "FB  coda: 9 gia' presenti, 1 aggiunti",
+  "Token: accesso ai dati fra 79 giorni"
  ]
 }
