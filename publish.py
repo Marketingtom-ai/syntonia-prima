@@ -98,7 +98,7 @@ def elenco(cartella):
     return sorted(x.name for x in d.glob("*.jpg")) if d.is_dir() else []
 
 def storie():
-    carte, foto = elenco("carte"), elenco("storie")
+        carte, foto = elenco("carte"), []  # storie italiane disattivate 22/09/2026
     if not carte and not foto:
         log("ST  nessun materiale: cartelle carte/ e storie/ vuote o assenti"); return
     loc = ora_italiana()
