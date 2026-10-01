@@ -1,10 +1,13 @@
 {
- "run": "2026-09-22T23:33:00Z",
- "ora italiana": "2026-09-23 01:33",
+ "run": "2026-10-01T13:30:27Z",
+ "ora italiana": "2026-10-01 15:30",
  "righe": [
-  "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
-  "FB  coda: 8 gia' presenti, 0 aggiunti",
-  "Token: accesso ai dati fra 68 giorni"
+  "IG  pubblicato n.15 VOCE-02-MANIFESTO  https://www.instagram.com/p/Dd9BRxNFiIm/",
+  "IG  ATTENZIONE: restano 1 post arretrati",
+  "ST  mattina: carte/VOCE-11-LUOGO.jpg",
+  "FB  programmato n.23 RISERVA-DOPOCENA-C03 per 2026-10-24T09:00:00Z",
+  "FB  programmato n.24 VOCE-04-MESTIERE per 2026-10-27T18:30:00Z",
+  "FB  coda: 6 gia' presenti, 2 aggiunti",
+  "Token: accesso ai dati fra 59 giorni"
  ]
 }
