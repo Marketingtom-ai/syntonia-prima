@@ -1,10 +1,11 @@
 {
- "run": "2026-10-02T00:37:22Z",
- "ora italiana": "2026-10-02 02:37",
+ "run": "2026-10-02T12:48:58Z",
+ "ora italiana": "2026-10-02 14:48",
  "righe": [
   "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
-  "FB  coda: 8 gia' presenti, 0 aggiunti",
-  "Token: accesso ai dati fra 59 giorni"
+  "ST  mattina: carte/VOCE-12-LUOGO.jpg",
+  "FB  programmato n.25 S12-MAR-UNPRODOTTO per 2026-10-31T10:00:00Z",
+  "FB  coda: 8 gia' presenti, 1 aggiunti",
+  "Token: accesso ai dati fra 58 giorni"
  ]
 }
