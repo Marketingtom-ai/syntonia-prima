@@ -16,6 +16,9 @@ name: PRIMA
 #   06:20           recupero di tutto cio' che fosse rimasto indietro
 
 on:
+  push:
+    branches: [main]
+    paths: ['manifest.json', 'storie_piano.json']   # un calendario nuovo si applica subito, senza aspettare l'orologio
   schedule:
     - cron: '20 6 * * *'
     - cron: '30 7 * * *'
