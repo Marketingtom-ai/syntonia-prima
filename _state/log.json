@@ -1,13 +1,11 @@
 {
- "run": "2026-10-17T19:13:44Z",
- "ora italiana": "2026-10-17 21:13",
+ "run": "2026-10-17T19:34:06Z",
+ "ora italiana": "2026-10-17 21:34",
  "righe": [
   "IG  niente da pubblicare",
   "ST  niente da pubblicare",
-  "FB  tolto dalla coda: At anchor there is no second run.",
-  "FB  programmato n.22 RF-ANCORA per 2026-10-18T09:00:00Z",
-  "FB  programmato n.24 VOCE-04-MESTIERE per 2026-10-20T17:30:00Z",
-  "FB  coda: 8 gia' presenti, 2 aggiunti",
+  "FB  coda gia' allineata",
+  "FB  coda: 10 gia' presenti, 0 aggiunti",
   "Token: accesso ai dati fra 43 giorni"
  ]
 }
