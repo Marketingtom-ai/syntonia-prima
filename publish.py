@@ -33,7 +33,9 @@ def api(path, params=None, post=False, method=None):
         raise RuntimeError("%s %s -> %s" % (method or ("POST" if post else "GET"), path, e.read().decode()[:300]))
 
 def now():   return datetime.datetime.now(datetime.timezone.utc)
-def when(p): return datetime.datetime.strptime(p["when"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
+def _t(x): return datetime.datetime.strptime(x, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
+def when(p): return _t(p["when"])
+def when_fb(p): return _t(p.get("fb_when", p["when"]))   # Facebook puo' avere un orario suo (es. post gia' in coda)
 def capo(p): return p["caption"].split("\n")[0].strip()
 
 def _ultima_domenica(anno, mese):
@@ -56,6 +58,7 @@ def scrivi(f, dati):
     (STATO / f).write_text(json.dumps(dati, ensure_ascii=False, indent=1), encoding="utf-8")
 
 def files_of(p):
+    if p.get("files"):              return p["files"]   # elenco esplicito (es. carosello a 2 immagini)
     if p.get("tipo") == "reel":     return [p["file"]]
     if p["id"].startswith("VOCE-"): return [p["id"] + ".jpg"]
     return ["%s_0%d.jpg" % (p["id"], k) for k in (1, 2, 3)]
@@ -154,19 +157,35 @@ def fb_programma(p, ep):
             except Exception: pass
         raise
 
+def fb_pulisci(tutti):
+    """Toglie dalla coda Facebook i post che il calendario non prevede piu' a quell'ora
+    (rimossi o spostati). Tocca solo post le cui prime parole sono di un post del manifest."""
+    voluti = {int(when_fb(p).timestamp()): capo(p) for p in tutti if p.get("attivo", True)}
+    noti = {capo(p) for p in tutti}
+    tolti = 0
+    for x in api(PAGE + "/scheduled_posts", {"fields": "id,scheduled_publish_time,message", "limit": "100"}).get("data", []):
+        c = (x.get("message") or "").split("\n")[0].strip()
+        if c in noti and voluti.get(int(x["scheduled_publish_time"])) != c:
+            try:
+                api(x["id"], method="DELETE"); tolti += 1
+                log("FB  tolto dalla coda: %s" % c[:60])
+            except Exception as e:
+                log("FB  non riesco a togliere %s: %s" % (x["id"], e))
+    if not tolti: log("FB  coda gia' allineata")
+
 def fb_ricarica(posts):
     coda = {x["scheduled_publish_time"] for x in
             api(PAGE + "/scheduled_posts", {"fields": "scheduled_publish_time", "limit": "100"}).get("data", [])}
     limite, fatti = now() + datetime.timedelta(days=29), 0
     for p in posts:
-        t = when(p)
+        t = when_fb(p)
         if t <= now() or t > limite: continue
         ep = int(t.timestamp())
         if ep in coda: continue
         for tentativo in (1, 2, 3):
             try:
                 fb_programma(p, ep); coda.add(ep); fatti += 1
-                log("FB  programmato n.%s %s per %s" % (p["n"], p["id"], p["when"])); break
+                log("FB  programmato n.%s %s per %s" % (p["n"], p["id"], p.get("fb_when", p["when"]))); break
             except Exception as e:
                 if tentativo == 3: log("FB  FALLITO n.%s %s: %s" % (p["n"], p["id"], e))
                 else: time.sleep(5)
@@ -195,9 +214,11 @@ def feed(posts):
     scrivi("usciti.json", sorted(usciti_n))
 
 def main():
-    posts = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))["posts"]
+    tutti = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))["posts"]
+    posts = [p for p in tutti if p.get("attivo", True)]
     STATO.mkdir(exist_ok=True)
-    for nome, f in (("feed", lambda: feed(posts)), ("storie", storie), ("facebook", lambda: fb_ricarica(posts))):
+    for nome, f in (("feed", lambda: feed(posts)), ("storie", storie),
+                    ("facebook-pulizia", lambda: fb_pulisci(tutti)), ("facebook", lambda: fb_ricarica(posts))):
         try: f()
         except Exception as e: log("%s: fallito -> %s" % (nome, e))
     try:
