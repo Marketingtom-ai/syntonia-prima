@@ -104,6 +104,8 @@ def storie():
     carte, foto = elenco("carte"), []  # storie italiane disattivate 22/09/2026
     if not carte and not foto:
         log("ST  nessun materiale: cartelle carte/ e storie/ vuote o assenti"); return
+    try: piano = json.loads((ROOT / "storie_piano.json").read_text(encoding="utf-8"))   # carta scelta giorno per giorno
+    except Exception: piano = {}
     loc = ora_italiana()
     minuti = loc.hour * 60 + loc.minute
     d = (loc.date() - GIORNO_ZERO).days
@@ -111,7 +113,9 @@ def storie():
     blocchi = []
     if minuti >= MATTINA[0] * 60 + MATTINA[1]:
         b = []
-        if carte: b.append("carte/" + carte[d % len(carte)])
+        if carte:
+            scelta = piano.get(loc.date().isoformat())
+            b.append("carte/" + (scelta if scelta in carte else carte[d % len(carte)]))
         if foto:  b.append("storie/" + foto[(2 * d) % len(foto)])
         blocchi.append(("mattina", b))
     if minuti >= SERA[0] * 60 + SERA[1] and foto:
