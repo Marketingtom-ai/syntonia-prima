@@ -1,11 +1,14 @@
 {
- "run": "2026-10-17T22:58:34Z",
- "ora italiana": "2026-10-18 00:58",
+ "run": "2026-10-18T09:52:53Z",
+ "ora italiana": "2026-10-18 11:52",
  "righe": [
   "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
+  "ST  mattina: carte/VOCE-01-MANIFESTO.jpg",
   "FB  coda gia' allineata",
-  "FB  coda: 10 gia' presenti, 0 aggiunti",
+  "FB  programmato n.76 MOD-01 per 2026-10-29T18:30:00Z",
+  "FB  programmato n.77 MOD-02 per 2026-11-05T18:30:00Z",
+  "FB  programmato n.78 MOD-03 per 2026-11-12T18:30:00Z",
+  "FB  coda: 9 gia' presenti, 3 aggiunti",
   "Token: accesso ai dati fra 43 giorni"
  ]
 }
