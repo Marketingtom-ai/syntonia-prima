@@ -1,77 +1,377 @@
 {
-"2026-10-18": "VOCE-01-MANIFESTO.jpg",
-"2026-10-19": "VOCE-02-MANIFESTO.jpg",
-"2026-10-20": "VOCE-03-MANIFESTO.jpg",
-"2026-10-21": "VOCE-04-MESTIERE.jpg",
-"2026-10-22": "VOCE-05-MESTIERE.jpg",
-"2026-10-23": "VOCE-06-MESTIERE.jpg",
-"2026-10-24": "VOCE-07-MESTIERE.jpg",
-"2026-10-25": "VOCE-08-MESTIERE.jpg",
-"2026-10-26": "VOCE-09-MESTIERE.jpg",
-"2026-10-27": "VOCE-10-LUOGO.jpg",
-"2026-10-28": "VOCE-11-LUOGO.jpg",
-"2026-10-29": "MOD-01.jpg",
-"2026-10-30": "VOCE-12-LUOGO.jpg",
-"2026-10-31": "VOCE-14-LUOGO.jpg",
-"2026-11-01": "VOCE-15-SERA.jpg",
-"2026-11-02": "VOCE-16-SERA.jpg",
-"2026-11-03": "VOCE-17-SERA.jpg",
-"2026-11-04": "VOCE-18-SERA.jpg",
-"2026-11-05": "MOD-02.jpg",
-"2026-11-06": "VOCE-01-MANIFESTO.jpg",
-"2026-11-07": "VOCE-02-MANIFESTO.jpg",
-"2026-11-08": "MOD-01.jpg",
-"2026-11-09": "VOCE-03-MANIFESTO.jpg",
-"2026-11-10": "VOCE-04-MESTIERE.jpg",
-"2026-11-11": "VOCE-05-MESTIERE.jpg",
-"2026-11-12": "MOD-03.jpg",
-"2026-11-13": "VOCE-06-MESTIERE.jpg",
-"2026-11-14": "VOCE-07-MESTIERE.jpg",
-"2026-11-15": "MOD-02.jpg",
-"2026-11-16": "VOCE-08-MESTIERE.jpg",
-"2026-11-17": "VOCE-09-MESTIERE.jpg",
-"2026-11-18": "VOCE-10-LUOGO.jpg",
-"2026-11-19": "MOD-04.jpg",
-"2026-11-20": "VOCE-11-LUOGO.jpg",
-"2026-11-21": "VOCE-12-LUOGO.jpg",
-"2026-11-22": "MOD-03.jpg",
-"2026-11-23": "VOCE-14-LUOGO.jpg",
-"2026-11-24": "VOCE-15-SERA.jpg",
-"2026-11-25": "MOD-04.jpg",
-"2026-11-26": "MOD-05.jpg",
-"2026-11-27": "VOCE-16-SERA.jpg",
-"2026-11-28": "VOCE-17-SERA.jpg",
-"2026-11-29": "MOD-05.jpg",
-"2026-11-30": "VOCE-18-SERA.jpg",
-"2026-12-01": "VOCE-01-MANIFESTO.jpg",
-"2026-12-02": "MOD-01.jpg",
-"2026-12-03": "MOD-06.jpg",
-"2026-12-04": "VOCE-02-MANIFESTO.jpg",
-"2026-12-05": "MOD-07.jpg",
-"2026-12-06": "MOD-07.jpg",
-"2026-12-07": "MOD-01.jpg",
-"2026-12-08": "VOCE-03-MANIFESTO.jpg",
-"2026-12-09": "MOD-02.jpg",
-"2026-12-10": "MOD-08.jpg",
-"2026-12-11": "VOCE-04-MESTIERE.jpg",
-"2026-12-12": "MOD-09.jpg",
-"2026-12-13": "MOD-01.jpg",
-"2026-12-14": "MOD-02.jpg",
-"2026-12-15": "VOCE-05-MESTIERE.jpg",
-"2026-12-16": "MOD-03.jpg",
-"2026-12-17": "MOD-10.jpg",
-"2026-12-18": "VOCE-06-MESTIERE.jpg",
-"2026-12-19": "MOD-11.jpg",
-"2026-12-20": "MOD-02.jpg",
-"2026-12-21": "MOD-03.jpg",
-"2026-12-22": "VOCE-07-MESTIERE.jpg",
-"2026-12-23": "MOD-04.jpg",
-"2026-12-24": "VOCE-08-MESTIERE.jpg",
-"2026-12-25": "VOCE-09-MESTIERE.jpg",
-"2026-12-26": "VOCE-10-LUOGO.jpg",
-"2026-12-27": "MOD-05.jpg",
-"2026-12-28": "MOD-06.jpg",
-"2026-12-29": "VOCE-11-LUOGO.jpg",
-"2026-12-30": "MOD-07.jpg",
-"2026-12-31": "VOCE-12-LUOGO.jpg"
+ "2026-10-18": [
+  "carte/VOCE-01-MANIFESTO.jpg",
+  "st/S08-SAB-NOVANTUNO_03.jpg",
+  "st/SO-01_02.jpg"
+ ],
+ "2026-10-19": [
+  "carte/VOCE-02-MANIFESTO.jpg",
+  "st/S08-MAR-UNPRODOTTO_01.jpg",
+  "st/MOD-03_03.jpg"
+ ],
+ "2026-10-20": [
+  "carte/VOCE-03-MANIFESTO.jpg",
+  "st/S09-SAB-MARE_01.jpg",
+  "st/MOD-08_03.jpg"
+ ],
+ "2026-10-21": [
+  "carte/VOCE-04-MESTIERE.jpg",
+  "st/S07-GIO-ATAVOLA_02.jpg",
+  "st/S07-SAB-DIMORA_02.jpg"
+ ],
+ "2026-10-22": [
+  "carte/VOCE-05-MESTIERE.jpg",
+  "st/MOD-02_02.jpg",
+  "st/S04-GIO-LATAVOLA_01.jpg"
+ ],
+ "2026-10-23": [
+  "carte/VOCE-06-MESTIERE.jpg",
+  "st/RF-ANCORA_03.jpg",
+  "st/RF-ANCORA_01.jpg"
+ ],
+ "2026-10-24": [
+  "carte/VOCE-07-MESTIERE.jpg",
+  "st/RISERVA-ILPIATTO-D03_01.jpg",
+  "st/S05-SAB-NOVANTUNO_01.jpg"
+ ],
+ "2026-10-25": [
+  "carte/VOCE-08-MESTIERE.jpg",
+  "st/MOD-06_03.jpg",
+  "st/S04-MAR-UNPRODOTTO_02.jpg"
+ ],
+ "2026-10-26": [
+  "carte/VOCE-09-MESTIERE.jpg",
+  "st/S10-SAB-MARE_02.jpg",
+  "st/S01-SAB-NOVANTUNO_03.jpg"
+ ],
+ "2026-10-27": [
+  "carte/VOCE-10-LUOGO.jpg",
+  "st/S03-SAB-DIMORA_02.jpg",
+  "st/RF-ANCORA_02.jpg"
+ ],
+ "2026-10-28": [
+  "carte/VOCE-11-LUOGO.jpg",
+  "st/S12-MAR-UNPRODOTTO_01.jpg",
+  "st/S12-MAR-UNPRODOTTO_02.jpg"
+ ],
+ "2026-10-29": [
+  "carte/MOD-01.jpg",
+  "st/VE-LIMONAIA_02.jpg",
+  "st/S01-SAB-DIMORA_01.jpg"
+ ],
+ "2026-10-30": [
+  "carte/VOCE-12-LUOGO.jpg",
+  "st/MOD-09_03.jpg",
+  "st/S04-GIO-LATAVOLA_03.jpg"
+ ],
+ "2026-10-31": [
+  "carte/VOCE-14-LUOGO.jpg",
+  "st/S12-GIO-LATAVOLA_03.jpg",
+  "st/S04-GIO-LATAVOLA_02.jpg"
+ ],
+ "2026-11-01": [
+  "carte/VOCE-15-SERA.jpg",
+  "st/S03-MAR-ILBANCO_02.jpg",
+  "st/SO-01_03.jpg"
+ ],
+ "2026-11-02": [
+  "carte/VOCE-16-SERA.jpg",
+  "st/MOD-05_02.jpg",
+  "st/S12-SAB-NOVANTUNO_02.jpg"
+ ],
+ "2026-11-03": [
+  "carte/VOCE-17-SERA.jpg",
+  "st/MOD-11_03.jpg",
+  "st/S11-GIO-DOPOCENA_02.jpg"
+ ],
+ "2026-11-04": [
+  "carte/VOCE-18-SERA.jpg",
+  "st/S08-SAB-NOVANTUNO_01.jpg",
+  "st/S02-SAB-NOVANTUNO_03.jpg"
+ ],
+ "2026-11-05": [
+  "carte/MOD-02.jpg",
+  "st/S01-GIO-LATAVOLA_02.jpg",
+  "st/MOD-07_03.jpg"
+ ],
+ "2026-11-06": [
+  "carte/VOCE-01-MANIFESTO.jpg",
+  "st/VE-CORTILE_03.jpg",
+  "st/S08-GIO-DOPOCENA_03.jpg"
+ ],
+ "2026-11-07": [
+  "carte/VOCE-02-MANIFESTO.jpg",
+  "st/MOD-03_02.jpg",
+  "st/S07-GIO-ATAVOLA_01.jpg"
+ ],
+ "2026-11-08": [
+  "carte/MOD-01.jpg",
+  "st/S12-MAR-UNPRODOTTO_03.jpg",
+  "st/S12-GIO-LATAVOLA_01.jpg"
+ ],
+ "2026-11-09": [
+  "carte/VOCE-03-MANIFESTO.jpg",
+  "st/VE-SALONE_02.jpg",
+  "st/VE-CORTILE_01.jpg"
+ ],
+ "2026-11-10": [
+  "carte/VOCE-04-MESTIERE.jpg",
+  "st/S11-MAR-ILBANCO_03.jpg",
+  "st/VE-SALONE_01.jpg"
+ ],
+ "2026-11-11": [
+  "carte/VOCE-05-MESTIERE.jpg",
+  "st/S08-MAR-UNPRODOTTO_03.jpg",
+  "st/S03-SAB-DIMORA_01.jpg"
+ ],
+ "2026-11-12": [
+  "carte/MOD-03.jpg",
+  "st/MOD-10_02.jpg",
+  "st/S03-MAR-ILBANCO_03.jpg"
+ ],
+ "2026-11-13": [
+  "carte/VOCE-06-MESTIERE.jpg",
+  "st/MOD-11_02.jpg",
+  "st/MOD-05_03.jpg"
+ ],
+ "2026-11-14": [
+  "carte/VOCE-07-MESTIERE.jpg",
+  "st/S10-MAR-UNPRODOTTO_03.jpg",
+  "st/MOD-02_03.jpg"
+ ],
+ "2026-11-15": [
+  "carte/MOD-02.jpg",
+  "st/S06-MAR-UNPRODOTTO_03.jpg",
+  "st/VE-CHIOSTRO_03.jpg"
+ ],
+ "2026-11-16": [
+  "carte/VOCE-08-MESTIERE.jpg",
+  "st/RISERVA-ILPIATTO-D03_02.jpg",
+  "st/S01-GIO-LATAVOLA_01.jpg"
+ ],
+ "2026-11-17": [
+  "carte/VOCE-09-MESTIERE.jpg",
+  "st/S12-GIO-LATAVOLA_02.jpg",
+  "st/S08-MAR-UNPRODOTTO_02.jpg"
+ ],
+ "2026-11-18": [
+  "carte/VOCE-10-LUOGO.jpg",
+  "st/S02-SAB-NOVANTUNO_02.jpg",
+  "st/S10-SAB-MARE_03.jpg"
+ ],
+ "2026-11-19": [
+  "carte/MOD-04.jpg",
+  "st/S11-MAR-ILBANCO_01.jpg",
+  "st/S03-SAB-DIMORA_03.jpg"
+ ],
+ "2026-11-20": [
+  "carte/VOCE-11-LUOGO.jpg",
+  "st/MOD-09_02.jpg",
+  "st/S05-SAB-NOVANTUNO_03.jpg"
+ ],
+ "2026-11-21": [
+  "carte/VOCE-12-LUOGO.jpg",
+  "st/S10-SAB-MARE_01.jpg",
+  "st/S01-SAB-NOVANTUNO_02.jpg"
+ ],
+ "2026-11-22": [
+  "carte/MOD-03.jpg",
+  "st/S07-GIO-ATAVOLA_03.jpg",
+  "st/S01-SAB-DIMORA_02.jpg"
+ ],
+ "2026-11-23": [
+  "carte/VOCE-14-LUOGO.jpg",
+  "st/S07-SAB-DIMORA_01.jpg",
+  "st/VE-LIMONAIA_01.jpg"
+ ],
+ "2026-11-24": [
+  "carte/VOCE-15-SERA.jpg",
+  "st/MOD-01_03.jpg",
+  "st/VE-CHIOSTRO_01.jpg"
+ ],
+ "2026-11-25": [
+  "carte/MOD-04.jpg",
+  "st/MOD-06_02.jpg",
+  "st/VE-CORTILE_02.jpg"
+ ],
+ "2026-11-26": [
+  "carte/MOD-05.jpg",
+  "st/S04-MAR-UNPRODOTTO_03.jpg",
+  "st/FI-02_02.jpg"
+ ],
+ "2026-11-27": [
+  "carte/VOCE-16-SERA.jpg",
+  "st/S09-SAB-MARE_03.jpg",
+  "st/MOD-04_03.jpg"
+ ],
+ "2026-11-28": [
+  "carte/VOCE-17-SERA.jpg",
+  "st/S12-SAB-NOVANTUNO_03.jpg",
+  "st/MOD-10_03.jpg"
+ ],
+ "2026-11-29": [
+  "carte/MOD-05.jpg",
+  "st/S11-MAR-ILBANCO_02.jpg",
+  "st/S08-GIO-DOPOCENA_01.jpg"
+ ],
+ "2026-11-30": [
+  "carte/VOCE-18-SERA.jpg",
+  "st/VE-LIMONAIA_03.jpg",
+  "st/MOD-08_02.jpg"
+ ],
+ "2026-12-01": [
+  "carte/VOCE-01-MANIFESTO.jpg",
+  "st/MOD-04_02.jpg",
+  "st/S01-SAB-DIMORA_03.jpg"
+ ],
+ "2026-12-02": [
+  "carte/MOD-01.jpg",
+  "st/S06-MAR-UNPRODOTTO_02.jpg",
+  "st/S04-MAR-UNPRODOTTO_01.jpg"
+ ],
+ "2026-12-03": [
+  "carte/MOD-06.jpg",
+  "st/FI-02_03.jpg",
+  "st/S12-SAB-NOVANTUNO_01.jpg"
+ ],
+ "2026-12-04": [
+  "carte/VOCE-02-MANIFESTO.jpg",
+  "st/S10-MAR-UNPRODOTTO_01.jpg",
+  "st/FI-02_01.jpg"
+ ],
+ "2026-12-05": [
+  "carte/MOD-07.jpg",
+  "st/MOD-07_02.jpg",
+  "st/S02-SAB-NOVANTUNO_01.jpg"
+ ],
+ "2026-12-06": [
+  "carte/MOD-07.jpg",
+  "st/S02-MAR-UNPRODOTTO_03.jpg",
+  "st/VE-SALONE_03.jpg"
+ ],
+ "2026-12-07": [
+  "carte/MOD-01.jpg",
+  "st/S10-MAR-UNPRODOTTO_02.jpg",
+  "st/S11-GIO-DOPOCENA_03.jpg"
+ ],
+ "2026-12-08": [
+  "carte/VOCE-03-MANIFESTO.jpg",
+  "st/S09-SAB-MARE_02.jpg",
+  "st/S06-MAR-UNPRODOTTO_01.jpg"
+ ],
+ "2026-12-09": [
+  "carte/MOD-02.jpg",
+  "st/S08-SAB-NOVANTUNO_02.jpg",
+  "st/S02-MAR-UNPRODOTTO_02.jpg"
+ ],
+ "2026-12-10": [
+  "carte/MOD-08.jpg",
+  "st/S08-GIO-DOPOCENA_02.jpg",
+  "st/S05-SAB-NOVANTUNO_02.jpg"
+ ],
+ "2026-12-11": [
+  "carte/VOCE-04-MESTIERE.jpg",
+  "st/S01-SAB-NOVANTUNO_01.jpg",
+  "st/MOD-01_02.jpg"
+ ],
+ "2026-12-12": [
+  "carte/MOD-09.jpg",
+  "st/S01-GIO-LATAVOLA_03.jpg",
+  "st/S11-GIO-DOPOCENA_01.jpg"
+ ],
+ "2026-12-13": [
+  "carte/MOD-01.jpg",
+  "st/S02-MAR-UNPRODOTTO_01.jpg",
+  "st/S03-MAR-ILBANCO_01.jpg"
+ ],
+ "2026-12-14": [
+  "carte/MOD-02.jpg",
+  "st/RISERVA-ILPIATTO-D03_03.jpg",
+  "st/VE-CHIOSTRO_02.jpg"
+ ],
+ "2026-12-15": [
+  "carte/VOCE-05-MESTIERE.jpg",
+  "st/S07-SAB-DIMORA_03.jpg",
+  "st/S08-SAB-NOVANTUNO_03.jpg"
+ ],
+ "2026-12-16": [
+  "carte/MOD-03.jpg",
+  "st/SO-01_02.jpg",
+  "st/S08-MAR-UNPRODOTTO_01.jpg"
+ ],
+ "2026-12-17": [
+  "carte/MOD-10.jpg",
+  "st/MOD-03_03.jpg",
+  "st/S09-SAB-MARE_01.jpg"
+ ],
+ "2026-12-18": [
+  "carte/VOCE-06-MESTIERE.jpg",
+  "st/MOD-08_03.jpg",
+  "st/S07-GIO-ATAVOLA_02.jpg"
+ ],
+ "2026-12-19": [
+  "carte/MOD-11.jpg",
+  "st/S07-SAB-DIMORA_02.jpg",
+  "st/MOD-02_02.jpg"
+ ],
+ "2026-12-20": [
+  "carte/MOD-02.jpg",
+  "st/S04-GIO-LATAVOLA_01.jpg",
+  "st/RF-ANCORA_03.jpg"
+ ],
+ "2026-12-21": [
+  "carte/MOD-03.jpg",
+  "st/RF-ANCORA_01.jpg",
+  "st/RISERVA-ILPIATTO-D03_01.jpg"
+ ],
+ "2026-12-22": [
+  "carte/VOCE-07-MESTIERE.jpg",
+  "st/S05-SAB-NOVANTUNO_01.jpg",
+  "st/MOD-06_03.jpg"
+ ],
+ "2026-12-23": [
+  "carte/MOD-04.jpg",
+  "st/S04-MAR-UNPRODOTTO_02.jpg",
+  "st/S10-SAB-MARE_02.jpg"
+ ],
+ "2026-12-24": [
+  "carte/VOCE-08-MESTIERE.jpg",
+  "st/S01-SAB-NOVANTUNO_03.jpg",
+  "st/S03-SAB-DIMORA_02.jpg"
+ ],
+ "2026-12-25": [
+  "carte/VOCE-09-MESTIERE.jpg",
+  "st/RF-ANCORA_02.jpg",
+  "st/S12-MAR-UNPRODOTTO_01.jpg"
+ ],
+ "2026-12-26": [
+  "carte/VOCE-10-LUOGO.jpg",
+  "st/S12-MAR-UNPRODOTTO_02.jpg",
+  "st/VE-LIMONAIA_02.jpg"
+ ],
+ "2026-12-27": [
+  "carte/MOD-05.jpg",
+  "st/S01-SAB-DIMORA_01.jpg",
+  "st/MOD-09_03.jpg"
+ ],
+ "2026-12-28": [
+  "carte/MOD-06.jpg",
+  "st/S04-GIO-LATAVOLA_03.jpg",
+  "st/S12-GIO-LATAVOLA_03.jpg"
+ ],
+ "2026-12-29": [
+  "carte/VOCE-11-LUOGO.jpg",
+  "st/S04-GIO-LATAVOLA_02.jpg",
+  "st/S03-MAR-ILBANCO_02.jpg"
+ ],
+ "2026-12-30": [
+  "carte/MOD-07.jpg",
+  "st/SO-01_03.jpg",
+  "st/MOD-05_02.jpg"
+ ],
+ "2026-12-31": [
+  "carte/VOCE-12-LUOGO.jpg",
+  "st/S12-SAB-NOVANTUNO_02.jpg",
+  "st/MOD-11_03.jpg"
+ ]
 }

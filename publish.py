@@ -14,7 +14,7 @@ STATO = ROOT / "_state"
 LOG = []
 
 # le storie: due momenti al giorno, ora italiana
-MATTINA, SERA = (9, 30), (21, 0)
+SLOT = [("mattina", (9, 30)), ("pranzo", (13, 0)), ("sera", (21, 0))]
 GIORNO_ZERO = datetime.date(2026, 9, 3)
 
 def log(m):
@@ -101,39 +101,30 @@ def elenco(cartella):
     return sorted(x.name for x in d.glob("*.jpg")) if d.is_dir() else []
 
 def storie():
-    carte, foto = elenco("carte"), []  # storie italiane disattivate 22/09/2026
-    if not carte and not foto:
-        log("ST  nessun materiale: cartelle carte/ e storie/ vuote o assenti"); return
-    try: piano = json.loads((ROOT / "storie_piano.json").read_text(encoding="utf-8"))   # carta scelta giorno per giorno
+    carte = elenco("carte")
+    try: piano = json.loads((ROOT / "storie_piano.json").read_text(encoding="utf-8"))   # 3 storie al giorno: data -> [mattina, pranzo, sera]
     except Exception: piano = {}
     loc = ora_italiana()
     minuti = loc.hour * 60 + loc.minute
-    d = (loc.date() - GIORNO_ZERO).days
-    if d < 0: return
-    blocchi = []
-    if minuti >= MATTINA[0] * 60 + MATTINA[1]:
-        b = []
-        if carte:
-            scelta = piano.get(loc.date().isoformat())
-            b.append("carte/" + (scelta if scelta in carte else carte[d % len(carte)]))
-        if foto:  b.append("storie/" + foto[(2 * d) % len(foto)])
-        blocchi.append(("mattina", b))
-    if minuti >= SERA[0] * 60 + SERA[1] and foto:
-        blocchi.append(("sera", ["storie/" + foto[(2 * d + 1) % len(foto)]]))
+    if (loc.date() - GIORNO_ZERO).days < 0: return
+    voce = piano.get(loc.date().isoformat())
+    if isinstance(voce, str): voce = ["carte/" + voce]
+    if not voce:
+        if not carte: log("ST  nessun materiale"); return
+        voce = ["carte/" + carte[(loc.date() - GIORNO_ZERO).days % len(carte)]]
     fatti = leggi("storie.json", {})
     nuove = 0
-    for nome, files in blocchi:
+    for i, (nome, (h, mi)) in enumerate(SLOT):
+        if i >= len(voce) or minuti < h * 60 + mi: continue
         chiave = "%s-%s" % (loc.date().isoformat(), nome)
         if chiave in fatti: continue
-        usciti = []
-        for rel in files:
-            try:
-                ig_storia(rel); usciti.append(rel); nuove += 1
-            except Exception as e:
-                log("ST  FALLITA %s: %s" % (rel, e))
-        if usciti:
-            fatti[chiave] = usciti
-            log("ST  %s: %s" % (nome, ", ".join(usciti)))
+        rel = voce[i]
+        if not (ROOT / rel).exists(): log("ST  manca %s" % rel); continue
+        try:
+            ig_storia(rel); fatti[chiave] = [rel]; nuove += 1
+            log("ST  %s: %s" % (nome, rel))
+        except Exception as e:
+            log("ST  FALLITA %s: %s" % (rel, e))
     limite = (loc.date() - datetime.timedelta(days=40)).isoformat()
     fatti = {k: v for k, v in fatti.items() if k[:10] >= limite}
     scrivi("storie.json", fatti)
