@@ -1,11 +1,13 @@
 {
- "run": "2026-10-22T23:56:06Z",
- "ora italiana": "2026-10-23 01:56",
+ "run": "2026-10-23T11:49:41Z",
+ "ora italiana": "2026-10-23 13:49",
  "righe": [
   "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
+  "ST  mattina: carte/VOCE-06-MESTIERE.jpg",
+  "ST  pranzo: st/RF-ANCORA_03.jpg",
   "FB  coda gia' allineata",
-  "FB  coda: 12 gia' presenti, 0 aggiunti",
-  "Token: accesso ai dati fra 85 giorni"
+  "FB  programmato n.48 VOCE-11-LUOGO per 2026-11-21T10:00:00Z",
+  "FB  coda: 12 gia' presenti, 1 aggiunti",
+  "Token: accesso ai dati fra 84 giorni"
  ]
 }
