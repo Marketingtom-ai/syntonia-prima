@@ -1,5 +1,5 @@
 {
- "aggiornato": "2026-10-18",
+ "aggiornato": "2026-10-24",
  "posts": [
   {
    "n": 1,
@@ -649,6 +649,56 @@
    "when": "2026-12-19T10:00:00Z",
    "fb": "todo",
    "caption": "A chapel with a plain vault, a stone floor and one tall window. A table down the nave, ten places, and candles that stay unlit until the guests arrive.\n\nSyntonia — a travelling kitchen based in Florence. We open rooms that are normally closed.\n\n#tuscanvenues #weddingvenuetuscany #destinationweddingitaly #privatevenue #tuscanyweddingcatering #privatedining #villawedding #privatechefflorence #firenze #syntonia"
+  },
+  {
+   "n": 87,
+   "id": "TEST-REEL-1-GLASS",
+   "when": "2026-10-24T17:30:00Z",
+   "fb": "done",
+   "caption": "Si dice che il seme del cachi, aperto a metà, racconti l'inverno che arriva: forchetta, inverno mite; cucchiaio, neve; coltello, freddo pungente. È una tradizione popolare, non una previsione — ma in cucina ci piace ascoltare le storie che arrivano con la stagione.\n\nSyntonia — a travelling kitchen based in Florence.\n\n#cachi #tradizioni #cucinaitaliana #firenze #syntonia",
+   "tipo": "reel",
+   "file": "TEST-REEL-1-GLASS.mp4",
+   "attivo": true
+  },
+  {
+   "n": 88,
+   "id": "TEST-REEL-2-POP",
+   "when": "2026-10-25T18:30:00Z",
+   "fb": "done",
+   "caption": "Si dice che il seme del cachi, aperto a metà, racconti l'inverno che arriva: forchetta, inverno mite; cucchiaio, neve; coltello, freddo pungente. È una tradizione popolare, non una previsione — ma in cucina ci piace ascoltare le storie che arrivano con la stagione.\n\nSyntonia — a travelling kitchen based in Florence.\n\n#cachi #tradizioni #cucinaitaliana #firenze #syntonia",
+   "tipo": "reel",
+   "file": "TEST-REEL-2-POP.mp4",
+   "attivo": true
+  },
+  {
+   "n": 89,
+   "id": "TEST-REEL-3-ELEGANTE",
+   "when": "2026-10-26T18:30:00Z",
+   "fb": "done",
+   "caption": "Si dice che il seme del cachi, aperto a metà, racconti l'inverno che arriva: forchetta, inverno mite; cucchiaio, neve; coltello, freddo pungente. È una tradizione popolare, non una previsione — ma in cucina ci piace ascoltare le storie che arrivano con la stagione.\n\nSyntonia — a travelling kitchen based in Florence.\n\n#cachi #tradizioni #cucinaitaliana #firenze #syntonia",
+   "tipo": "reel",
+   "file": "TEST-REEL-3-ELEGANTE.mp4",
+   "attivo": true
+  },
+  {
+   "n": 90,
+   "id": "TEST-REEL-4-MINIMAL",
+   "when": "2026-10-28T18:30:00Z",
+   "fb": "done",
+   "caption": "Si dice che il seme del cachi, aperto a metà, racconti l'inverno che arriva: forchetta, inverno mite; cucchiaio, neve; coltello, freddo pungente. È una tradizione popolare, non una previsione — ma in cucina ci piace ascoltare le storie che arrivano con la stagione.\n\nSyntonia — a travelling kitchen based in Florence.\n\n#cachi #tradizioni #cucinaitaliana #firenze #syntonia",
+   "tipo": "reel",
+   "file": "TEST-REEL-4-MINIMAL.mp4",
+   "attivo": true
+  },
+  {
+   "n": 91,
+   "id": "TEST-REEL-5-FANCY",
+   "when": "2026-10-30T18:30:00Z",
+   "fb": "done",
+   "caption": "Si dice che il seme del cachi, aperto a metà, racconti l'inverno che arriva: forchetta, inverno mite; cucchiaio, neve; coltello, freddo pungente. È una tradizione popolare, non una previsione — ma in cucina ci piace ascoltare le storie che arrivano con la stagione.\n\nSyntonia — a travelling kitchen based in Florence.\n\n#cachi #tradizioni #cucinaitaliana #firenze #syntonia",
+   "tipo": "reel",
+   "file": "TEST-REEL-5-FANCY.mp4",
+   "attivo": true
   }
  ]
 }
