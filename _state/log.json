@@ -1,16 +1,11 @@
 {
- "run": "2026-10-24T15:17:17Z",
- "ora italiana": "2026-10-24 17:17",
+ "run": "2026-10-24T15:19:25Z",
+ "ora italiana": "2026-10-24 17:19",
  "righe": [
   "IG  niente da pubblicare",
   "ST  niente da pubblicare",
   "FB  coda gia' allineata",
-  "FB  programmato n.87 TEST-REEL-1-GLASS per 2026-10-24T17:30:00Z",
-  "FB  programmato n.88 TEST-REEL-2-POP per 2026-10-25T18:30:00Z",
-  "FB  programmato n.89 TEST-REEL-3-ELEGANTE per 2026-10-26T18:30:00Z",
-  "FB  programmato n.90 TEST-REEL-4-MINIMAL per 2026-10-28T18:30:00Z",
-  "FB  programmato n.91 TEST-REEL-5-FANCY per 2026-10-30T18:30:00Z",
-  "FB  coda: 12 gia' presenti, 5 aggiunti",
+  "FB  coda: 14 gia' presenti, 0 aggiunti",
   "Token: accesso ai dati fra 83 giorni"
  ]
 }
