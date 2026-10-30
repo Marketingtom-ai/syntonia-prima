@@ -1,11 +1,13 @@
 {
- "run": "2026-10-30T00:42:43Z",
- "ora italiana": "2026-10-30 01:42",
+ "run": "2026-10-30T13:09:53Z",
+ "ora italiana": "2026-10-30 14:09",
  "righe": [
   "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
+  "ST  mattina: carte/VOCE-12-LUOGO.jpg",
+  "ST  pranzo: st/MOD-09_03.jpg",
   "FB  coda gia' allineata",
-  "FB  coda: 13 gia' presenti, 0 aggiunti",
-  "Token: accesso ai dati fra 78 giorni"
+  "FB  programmato n.58 S03-SAB-DIMORA per 2026-11-28T10:00:00Z",
+  "FB  coda: 13 gia' presenti, 1 aggiunti",
+  "Token: accesso ai dati fra 77 giorni"
  ]
 }
