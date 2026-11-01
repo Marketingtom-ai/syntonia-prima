@@ -1,11 +1,12 @@
 {
- "run": "2026-10-31T23:59:18Z",
- "ora italiana": "2026-11-01 00:59",
+ "run": "2026-11-01T13:36:02Z",
+ "ora italiana": "2026-11-01 14:36",
  "righe": [
   "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
+  "ST  mattina: st/S03-MAR-ILBANCO_02.jpg",
+  "ST  pranzo: st/SO-01_03.jpg",
   "FB  coda gia' allineata",
   "FB  coda: 12 gia' presenti, 0 aggiunti",
-  "Token: accesso ai dati fra 76 giorni"
+  "Token: accesso ai dati fra 75 giorni"
  ]
 }
