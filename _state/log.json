@@ -1,11 +1,12 @@
 {
- "run": "2026-11-02T17:21:33Z",
- "ora italiana": "2026-11-02 18:21",
+ "run": "2026-11-02T18:42:36Z",
+ "ora italiana": "2026-11-02 19:42",
  "righe": [
   "IG  niente da pubblicare",
   "ST  niente da pubblicare",
   "FB  coda gia' allineata",
-  "FB  coda: 12 gia' presenti, 0 aggiunti",
+  "FB  programmato n.59 VOCE-14-LUOGO per 2026-12-01T18:30:00Z",
+  "FB  coda: 12 gia' presenti, 1 aggiunti",
   "Token: accesso ai dati fra 74 giorni"
  ]
 }
