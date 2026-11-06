@@ -1,11 +1,13 @@
 {
- "run": "2026-11-06T01:26:25Z",
- "ora italiana": "2026-11-06 02:26",
+ "run": "2026-11-06T14:25:23Z",
+ "ora italiana": "2026-11-06 15:25",
  "righe": [
   "IG  niente da pubblicare",
-  "ST  niente da pubblicare",
+  "ST  mattina: st/VE-CORTILE_03.jpg",
+  "ST  pranzo: st/S08-GIO-DOPOCENA_03.jpg",
   "FB  coda gia' allineata",
-  "FB  coda: 12 gia' presenti, 0 aggiunti",
-  "Token: accesso ai dati fra 71 giorni"
+  "FB  programmato n.82 MOD-07 per 2026-12-05T10:00:00Z",
+  "FB  coda: 12 gia' presenti, 1 aggiunti",
+  "Token: accesso ai dati fra 70 giorni"
  ]
 }
